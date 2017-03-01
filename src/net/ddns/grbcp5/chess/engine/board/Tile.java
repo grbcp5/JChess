@@ -1,5 +1,7 @@
 package net.ddns.grbcp5.chess.engine.board;
 
+/* Import statements */
+
 import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
 import java.util.HashMap;
@@ -14,6 +16,9 @@ import com.google.common.collect.ImmutableMap;
  */
 public abstract class Tile
 {
+    /**
+     * Number of different tile locations
+     */
     public static final int NUM_PIECES = 64;
 
     // Tile coordinate location from 0 - 63
@@ -33,15 +38,40 @@ public abstract class Tile
         return ImmutableMap.copyOf(emptyTileMap);
     }
 
+    /**
+     * Constructor for the abstract Tile class
+     *
+     * @param tileCoordinate location of tile in board from 0 - 63
+     */
     public Tile(final int tileCoordinate)
     {
         this.tileCoordinate = tileCoordinate;
     }
 
+    /**
+     * Will indicate if a this tile currently has a chess piece
+     *
+     * @return true if a piece is currently on this tile, false otherwise
+     */
     public abstract boolean isOccupied();
 
+    /**
+     * Accessor for the piece currently on this tile
+     *
+     * @return The piece object located on this tile, null if tile is empty
+     */
     public abstract Piece getPiece();
 
+    /**
+     * Factory function for producing a chess tile
+     * <p>
+     * Factory function should be used because it grantees using the correct Tile subclass. Will also used cached
+     * EmptyTile objects rather than regenerating new instances
+     *
+     * @param tileCoordinate location of tile on board from 0 - 63
+     * @param pieceOnTile    piece located on the new tile
+     * @return Tile instance with given values
+     */
     public static Tile createTile(final int tileCoordinate, final Piece pieceOnTile)
     {
         return (pieceOnTile != null) ?
@@ -49,20 +79,38 @@ public abstract class Tile
                 EMPTY_TILE_MAP.get(tileCoordinate);
     }
 
+    /**
+     * Tile subclass for tile without a piece on this tile
+     */
     public static final class EmptyTile extends Tile
     {
 
+        /**
+         * Constructor for tile without piece on this tile
+         *
+         * @param tileCoordinate location of tile on board from 0 - 63
+         */
         public EmptyTile(int tileCoordinate)
         {
             super(tileCoordinate);
         }
 
+        /**
+         * Will indicate if a this tile currently has a chess piece
+         *
+         * @return false by definition that this is an empty tile
+         */
         @Override
         public boolean isOccupied()
         {
             return false;
         }
 
+        /**
+         * Accessor for the piece currently on this tile
+         *
+         * @return null by definition that this is an empty tile
+         */
         @Override
         public Piece getPiece()
         {
@@ -72,8 +120,15 @@ public abstract class Tile
 
     public static final class OccupiedTile extends Tile
     {
+
         private final Piece pieceOnTile;
 
+        /**
+         * Constructor for a tile with a piece currently on this tile
+         *
+         * @param tileCoordinate location of tile on board form 0 - 63
+         * @param pieceOnTile    piece placed on this tile
+         */
         public OccupiedTile(final int tileCoordinate, final Piece pieceOnTile)
         {
             // Init superclass
@@ -90,12 +145,22 @@ public abstract class Tile
             }
         }
 
+        /**
+         * Will indicate if a this tile currently has a chess piece
+         *
+         * @return true by definition that this is an occupied tile
+         */
         @Override
         public boolean isOccupied()
         {
             return true;
         }
 
+        /**
+         * Accessor for the piece currently on this tile
+         *
+         * @return the piece currently placed on this tile
+         */
         @Override
         public Piece getPiece()
         {
