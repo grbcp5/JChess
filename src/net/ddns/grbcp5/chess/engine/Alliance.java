@@ -5,4 +5,6 @@ package net.ddns.grbcp5.chess.engine;
  */
 public enum Alliance
 {
+    WHITE,
+    BLACK
 }

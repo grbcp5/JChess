@@ -23,5 +23,5 @@ public abstract class Piece
     }
 
     public abstract List<Move> getLegalMoves(final Board board);
-    
+
 }
