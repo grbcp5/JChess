@@ -4,11 +4,12 @@ import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import com.google.common.collect.ImmutableMap;
 
 /**
  * Class for representing a tile on a chess board
- *
+ * <p>
  * Created by GrantBroadwater on 3/1/17.
  */
 public abstract class Tile
@@ -20,11 +21,11 @@ public abstract class Tile
 
     private static final Map<Integer, EmptyTile> EMPTY_TILE_MAP = createAllPossibleEmptyTiles();
 
-    private static Map<Integer,EmptyTile> createAllPossibleEmptyTiles()
+    private static Map<Integer, EmptyTile> createAllPossibleEmptyTiles()
     {
         final Map<Integer, EmptyTile> emptyTileMap = new HashMap<Integer, EmptyTile>();
 
-        for (int i=0; i<NUM_PIECES; i++)
+        for (int i = 0; i < NUM_PIECES; i++)
         {
             emptyTileMap.put(i, new EmptyTile(i));
         }
@@ -43,7 +44,9 @@ public abstract class Tile
 
     public static Tile createTile(final int tileCoordinate, final Piece pieceOnTile)
     {
-        return pieceOnTile != null ? new OccupiedTile(tileCoordinate, pieceOnTile) : new EmptyTile(tileCoordinate);
+        return (pieceOnTile != null) ?
+                new OccupiedTile(tileCoordinate, pieceOnTile) :
+                EMPTY_TILE_MAP.get(tileCoordinate);
     }
 
     public static final class EmptyTile extends Tile
@@ -80,8 +83,7 @@ public abstract class Tile
             if (pieceOnTile != null)
             {
                 this.pieceOnTile = pieceOnTile;
-            }
-            else
+            } else
             {
                 // TODO: Throw exception
                 this.pieceOnTile = null;
