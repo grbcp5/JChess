@@ -24,7 +24,7 @@ public abstract class Tile
     // Tile coordinate location from 0 - 63
     protected final int tileCoordinate;
 
-    private static final Map<Integer, EmptyTile> EMPTY_TILE_MAP = createAllPossibleEmptyTiles();
+    private static final Map<Integer, EmptyTile> EMPTY_TILE_CACHE = createAllPossibleEmptyTiles();
 
     private static Map<Integer, EmptyTile> createAllPossibleEmptyTiles()
     {
@@ -76,7 +76,7 @@ public abstract class Tile
     {
         return (pieceOnTile != null) ?
                 new OccupiedTile(tileCoordinate, pieceOnTile) :
-                EMPTY_TILE_MAP.get(tileCoordinate);
+                EMPTY_TILE_CACHE.get(tileCoordinate);
     }
 
     /**
@@ -90,7 +90,7 @@ public abstract class Tile
          *
          * @param tileCoordinate location of tile on board from 0 - 63
          */
-        public EmptyTile(int tileCoordinate)
+        private EmptyTile(int tileCoordinate)
         {
             super(tileCoordinate);
         }
@@ -129,7 +129,7 @@ public abstract class Tile
          * @param tileCoordinate location of tile on board form 0 - 63
          * @param pieceOnTile    piece placed on this tile
          */
-        public OccupiedTile(final int tileCoordinate, final Piece pieceOnTile)
+        private OccupiedTile(final int tileCoordinate, final Piece pieceOnTile)
         {
             // Init superclass
             super(tileCoordinate);
