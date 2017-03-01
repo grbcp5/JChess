@@ -2,6 +2,10 @@ package net.ddns.grbcp5.chess.engine.board;
 
 import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
+import java.util.HashMap;
+import java.util.Map;
+import com.google.common.collect.ImmutableMap;
+
 /**
  * Class for representing a tile on a chess board
  *
@@ -9,9 +13,24 @@ import net.ddns.grbcp5.chess.engine.pieces.Piece;
  */
 public abstract class Tile
 {
+    public static final int NUM_PIECES = 64;
 
     // Tile coordinate location from 0 - 63
     protected final int tileCoordinate;
+
+    private static final Map<Integer, EmptyTile> EMPTY_TILE_MAP = createAllPossibleEmptyTiles();
+
+    private static Map<Integer,EmptyTile> createAllPossibleEmptyTiles()
+    {
+        final Map<Integer, EmptyTile> emptyTileMap = new HashMap<Integer, EmptyTile>();
+
+        for (int i=0; i<NUM_PIECES; i++)
+        {
+            emptyTileMap.put(i, new EmptyTile(i));
+        }
+
+        return ImmutableMap.copyOf(emptyTileMap);
+    }
 
     public Tile(final int tileCoordinate)
     {
