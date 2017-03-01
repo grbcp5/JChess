@@ -11,9 +11,9 @@ public abstract class Tile
 {
 
     // Tile coordinate location from 0 - 63
-    int tileCoordinate;
+    protected final int tileCoordinate;
 
-    public Tile(int tileCoordinate)
+    public Tile(final int tileCoordinate)
     {
         this.tileCoordinate = tileCoordinate;
     }
@@ -45,9 +45,9 @@ public abstract class Tile
 
     public static final class OccupiedTile extends Tile
     {
-        Piece pieceOnTile;
+        private final Piece pieceOnTile;
 
-        public OccupiedTile(int tileCoordinate, Piece pieceOnTile)
+        public OccupiedTile(final int tileCoordinate, final Piece pieceOnTile)
         {
             // Init superclass
             super(tileCoordinate);
@@ -63,7 +63,7 @@ public abstract class Tile
                 this.pieceOnTile = null;
             }
         }
-        
+
         @Override
         public boolean isOccupied()
         {
