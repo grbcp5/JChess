@@ -38,4 +38,33 @@ public abstract class Tile
             return null;
         }
     }
+
+    public static final class OccupiedTile extends Tile
+    {
+        Piece pieceOnTile;
+
+        public OccupiedTile( int tileCoordinate, Piece pieceOnTile ) {
+
+            // Init superclass
+            super(tileCoordinate);
+
+            // Init member variables
+            if( pieceOnTile != null)
+                this.pieceOnTile = pieceOnTile;
+            else
+                // TODO: Throw exception
+                this.pieceOnTile = null;
+        }
+
+
+        @Override
+        public boolean isOccupied() {
+            return true;
+        }
+
+        @Override
+        public Piece getPiece() {
+            return pieceOnTile;
+        }
+    }
 }

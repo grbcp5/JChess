@@ -22,8 +22,8 @@
       <file leaf-file-name="Tile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+            <state relative-caret-position="228">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
               <folding>
                 <element signature="e#286#287#0" expanded="true" />
                 <element signature="e#338#339#0" expanded="true" />
@@ -33,6 +33,10 @@
                 <element signature="e#678#679#0" expanded="true" />
                 <element signature="e#731#732#0" expanded="true" />
                 <element signature="e#766#767#0" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1326#1327#0" expanded="true" />
+                <element signature="e#1379#1380#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -452,8 +456,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        <state relative-caret-position="228">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
           <folding>
             <element signature="e#286#287#0" expanded="true" />
             <element signature="e#338#339#0" expanded="true" />
@@ -463,6 +467,10 @@
             <element signature="e#678#679#0" expanded="true" />
             <element signature="e#731#732#0" expanded="true" />
             <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
           </folding>
         </state>
       </provider>
