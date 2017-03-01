@@ -41,6 +41,11 @@ public abstract class Tile
 
     public abstract Piece getPiece();
 
+    public static Tile createTile(final int tileCoordinate, final Piece pieceOnTile)
+    {
+        return pieceOnTile != null ? new OccupiedTile(tileCoordinate, pieceOnTile) : new EmptyTile(tileCoordinate);
+    }
+
     public static final class EmptyTile extends Tile
     {
 
