@@ -19,7 +19,7 @@ public abstract class Tile
     /**
      * Number of different tile locations
      */
-    public static final int NUM_PIECES = 64;
+    public static final int NUM_TILES = 64;
 
     // Tile coordinate location from 0 - 63
     protected final int tileCoordinate;
@@ -30,7 +30,7 @@ public abstract class Tile
     {
         final Map<Integer, EmptyTile> emptyTileMap = new HashMap<Integer, EmptyTile>();
 
-        for (int i = 0; i < NUM_PIECES; i++)
+        for (int i = 0; i < NUM_TILES; i++)
         {
             emptyTileMap.put(i, new EmptyTile(i));
         }
