@@ -1,7 +1,6 @@
 package net.ddns.grbcp5.chess.engine.pieces;
 
 import com.google.common.collect.ImmutableList;
-import net.ddns.grbcp5.chess.engine.Alliance;
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.BoardUtils;
 import net.ddns.grbcp5.chess.engine.board.Move;

@@ -12,20 +12,20 @@ import java.util.List;
 
 /**
  *
- * Created by GrantBroadwater on 3/5/17.
+ * Created by GrantBroadwater on 3/6/17.
  */
-public class Bishop extends Piece
+public class Rook extends Piece
 {
+    private static final int[] CANDIDATE_MOVES_VECTOR_COORDINATES = {-8, -1, 1, 8};
 
-    private static final int[] CANDIDATE_MOVES_VECTOR_COORDINATES = {-9, -7, 7, 9};
 
-    public Bishop(int position, Alliance alliance)
+    public Rook(final int position, final Alliance alliance)
     {
         super(position, alliance);
     }
 
     @Override
-    public Collection<Move> getLegalMoves(Board board)
+    public Collection<Move> getLegalMoves(final Board board)
     {
         int candidateDestinationCoordinate;
         final List<Move> legalMoves = new ArrayList<Move>();
@@ -89,12 +89,11 @@ public class Bishop extends Piece
 
     private static boolean isFirstColumnExclusion(final int currentPosition, final int offset)
     {
-        return BoardUtils.isFirstColumn(currentPosition) && (offset == -9 || offset == 7);
+        return BoardUtils.isFirstColumn(currentPosition) && (offset == -1);
     }
 
     private static boolean isEighthColumnExclusion(final int currentPosition, final int offset)
     {
-        return BoardUtils.isEighthColumn(currentPosition) && (offset == -7 || offset == 9);
+        return BoardUtils.isEighthColumn(currentPosition) && (offset == 1 );
     }
-
 }

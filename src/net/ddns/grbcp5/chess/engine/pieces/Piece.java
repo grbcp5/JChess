@@ -1,6 +1,5 @@
 package net.ddns.grbcp5.chess.engine.pieces;
 
-import net.ddns.grbcp5.chess.engine.Alliance;
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.Move;
 
