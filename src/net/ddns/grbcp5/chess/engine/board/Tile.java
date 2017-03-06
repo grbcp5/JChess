@@ -19,7 +19,7 @@ public abstract class Tile
     /**
      * Number of different tile locations
      */
-    public static final int NUM_TILES = 64;
+    public static final int NUM_TILES = BoardUtils.NUM_TILES;
 
     // Tile coordinate location from 0 - 63
     protected final int tileCoordinate;

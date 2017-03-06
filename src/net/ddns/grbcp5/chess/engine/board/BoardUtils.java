@@ -6,6 +6,9 @@ package net.ddns.grbcp5.chess.engine.board;
  */
 public class BoardUtils
 {
+    public static final int NUM_TILES = 64;
+    public static final int NUM_TILES_PER_ROW = 8;
+
     private BoardUtils()
     {
         throw new RuntimeException("Cannot instantiate BoardUtils");
@@ -13,7 +16,7 @@ public class BoardUtils
 
     public static boolean isValidTileCoordinate(final int destinationCoordinat)
     {
-        return 0 <= destinationCoordinat && destinationCoordinat < Tile.NUM_TILES;
+        return 0 <= destinationCoordinat && destinationCoordinat < NUM_TILES;
     }
 
     public static boolean isFirstColumn(final int currentPosition)
@@ -38,7 +41,7 @@ public class BoardUtils
 
     private static boolean isNColumn(final int currentPosition, final int columnNumber)
     {
-        return isValidTileCoordinate(currentPosition) && currentPosition % 8 == (columnNumber - 1);
+        return isValidTileCoordinate(currentPosition) && currentPosition % NUM_TILES_PER_ROW == (columnNumber - 1);
     }
 
 }

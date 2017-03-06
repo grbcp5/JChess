@@ -4,6 +4,8 @@ import net.ddns.grbcp5.chess.engine.Alliance;
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.BoardUtils;
 import net.ddns.grbcp5.chess.engine.board.Move;
+import net.ddns.grbcp5.chess.engine.board.Move.MajorMove;
+import net.ddns.grbcp5.chess.engine.board.Move.AttackMove;
 import net.ddns.grbcp5.chess.engine.board.Tile;
 
 import java.util.ArrayList;
@@ -12,7 +14,6 @@ import java.util.List;
 
 
 /**
- *
  * Created by GrantBroadwater on 3/1/17.
  */
 public class Knight extends Piece
@@ -46,7 +47,7 @@ public class Knight extends Piece
 
                 if (!candidateDestinationTile.isOccupied())
                 {
-                    legalMoves.add(new Move());
+                    legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinate));
                 }
                 else
                 {
@@ -55,7 +56,8 @@ public class Knight extends Piece
 
                     if (this.alliance != destinationPieceAlliance)
                     {
-                        legalMoves.add(new Move());
+                        legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate,
+                                pieceAtDestination));
                     }
                 }
             }
