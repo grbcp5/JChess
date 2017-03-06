@@ -34,7 +34,7 @@ public class BoardUtils
         return isNColumn(currentPosition, 7);
     }
 
-    public static boolean isEigthColumn(final int currentPosition)
+    public static boolean isEighthColumn(final int currentPosition)
     {
         return isNColumn(currentPosition, 8);
     }
