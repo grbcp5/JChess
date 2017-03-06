@@ -1,5 +1,6 @@
 package net.ddns.grbcp5.chess.engine.pieces;
 
+import com.google.common.collect.ImmutableList;
 import net.ddns.grbcp5.chess.engine.Alliance;
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.BoardUtils;
@@ -14,6 +15,7 @@ import java.util.List;
 
 
 /**
+ *
  * Created by GrantBroadwater on 3/1/17.
  */
 public class Knight extends Piece
@@ -32,30 +34,40 @@ public class Knight extends Piece
         int candidateDestinationCoordinate;
         final List<Move> legalMoves = new ArrayList<Move>(8);
 
+        /* For each of the possible leagal Moves */
         for (int currentCandidateOffset : CANDIDATE_LEGAL_MOVES)
         {
+            /* Calculate where you would move to */
             candidateDestinationCoordinate = this.position + currentCandidateOffset;
 
+            /* If the move-to location is on the board then... */
             if (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate))
             {
-                final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinate);
-
+                /* If this is an edge case then try the next move */
                 if (isColumnExclusion(this.position, currentCandidateOffset))
                 {
                     continue;
                 }
 
+                /* Get tile object on the board for this coordinate */
+                final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinate);
+
+                /* If no piece is on the move-to tile then... */
                 if (!candidateDestinationTile.isOccupied())
                 {
+                    /* Add a move to this tile to the list of legal moves */
                     legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinate));
                 }
-                else
+                else /* If a piece is on the move-to tile */
                 {
+                    /* Get the piece at the move-to tile */
                     final Piece pieceAtDestination = candidateDestinationTile.getPiece();
-                    final Alliance destinationPieceAlliance = pieceAtDestination.getAlliance();
 
+                    /* If that piece is not the same color as this piece then...*/
+                    final Alliance destinationPieceAlliance = pieceAtDestination.getAlliance();
                     if (this.alliance != destinationPieceAlliance)
                     {
+                        /* Add an attacking move to the move-to tile to the list of legal moves */
                         legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate,
                                 pieceAtDestination));
                     }
@@ -63,7 +75,7 @@ public class Knight extends Piece
             }
         }
 
-        return legalMoves;
+        return ImmutableList.copyOf(legalMoves);
     }
 
     private static boolean isColumnExclusion(final int currentPosition, final int candidateOffset)
@@ -87,12 +99,12 @@ public class Knight extends Piece
 
     private static boolean isSeventhColumnExclusion(final int currentPosition, final int candidateOffset)
     {
-        return BoardUtils.isSecondColumn(currentPosition) && ((candidateOffset == -6) || (candidateOffset == 10));
+        return BoardUtils.isSeventhColumn(currentPosition) && ((candidateOffset == -6) || (candidateOffset == 10));
     }
 
     private static boolean isEighthColumnExclusion(final int currentPosition, final int candidateOffset)
     {
-        return BoardUtils.isEigthColumn(currentPosition) && ((candidateOffset == -15) || (candidateOffset == -6) ||
+        return BoardUtils.isEighthColumn(currentPosition) && ((candidateOffset == -15) || (candidateOffset == -6) ||
                 (candidateOffset == 10) || (candidateOffset == 17));
     }
 }
