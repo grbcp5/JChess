@@ -44,4 +44,13 @@ public class BoardUtils
         return isValidTileCoordinate(currentPosition) && currentPosition % NUM_TILES_PER_ROW == (columnNumber - 1);
     }
 
+    public static boolean isSecondRow(final int currentPosition)
+    {
+        return 8 <= currentPosition && currentPosition < 16;
+    }
+
+    public static boolean isSeventhRow(final int currentPosition)
+    {
+        return 48 <= currentPosition && currentPosition < 56;
+    }
 }

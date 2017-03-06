@@ -12,8 +12,7 @@ public abstract class Piece
 {
 
     protected final int position;
-
-
+    protected final boolean isFirstMove;
 
     protected final Alliance alliance;
 
@@ -22,6 +21,12 @@ public abstract class Piece
     {
         this.position = position;
         this.alliance = alliance;
+        this.isFirstMove = false;
+    }
+
+    protected final boolean isFirstMove()
+    {
+        return this.isFirstMove;
     }
 
     public Alliance getAlliance()
