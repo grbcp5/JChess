@@ -87,7 +87,23 @@ public abstract class Player
 
     public MoveTransition makeMove(final Move move)
     {
-        return null;
+        if(!isLegalMove(move))
+        {
+            return new MoveTransition(this.board, move, MoveStatus.ILLEGAL_MOVE);
+        }
+
+        final Board transitionBoard = move.execute();
+
+        final Collection<Move> kingAttacks = Player.calculateAttacksOnTile(
+                transitionBoard.getCurrentPlayer().getOpponent().getPlayersKing().getPosition(),
+                transitionBoard.getCurrentPlayer().getLegalMoves());
+
+        if(!kingAttacks.isEmpty())
+        {
+            return new MoveTransition(this.board, move, MoveStatus.LEAVES_PLAYER_IN_CHECK);
+        }
+
+        return new MoveTransition(transitionBoard, move, MoveStatus.DONE);
     }
 
     public boolean isInCheck()
@@ -108,5 +124,15 @@ public abstract class Player
         }
 
         return ImmutableList.copyOf(attackMoves);
+    }
+
+    public Collection<Move> getLegalMoves()
+    {
+        return legalMoves;
+    }
+
+    public King getPlayersKing()
+    {
+        return playersKing;
     }
 }

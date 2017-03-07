@@ -6,5 +6,7 @@ package net.ddns.grbcp5.chess.engine.board;
  */
 public enum MoveStatus
 {
-    DONE;
+    DONE,
+    ILLEGAL_MOVE,
+    LEAVES_PLAYER_IN_CHECK;
 }

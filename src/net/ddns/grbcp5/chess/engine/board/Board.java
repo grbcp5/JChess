@@ -3,6 +3,7 @@ package net.ddns.grbcp5.chess.engine.board;
 import com.google.common.collect.ImmutableList;
 import net.ddns.grbcp5.chess.engine.pieces.*;
 import net.ddns.grbcp5.chess.engine.player.BlackPlayer;
+import net.ddns.grbcp5.chess.engine.player.Player;
 import net.ddns.grbcp5.chess.engine.player.WhitePlayer;
 
 import java.util.*;
@@ -41,6 +42,8 @@ public class Board
     private final WhitePlayer whitePlayer;
     private final BlackPlayer blackPlayer;
 
+    private final Player currentPlayer;
+
     public Board(final Builder builder)
     {
         gameBoard = createGameBoard(builder);
@@ -52,6 +55,18 @@ public class Board
 
         this.whitePlayer = new WhitePlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
         this.blackPlayer = new BlackPlayer(this, blackStandardLegalMoves, whiteStandardLegalMoves);
+
+        switch (builder.getNextMoveMaker())
+        {
+            case BLACK:
+                this.currentPlayer = blackPlayer;
+                break;
+            case WHITE:
+                this.currentPlayer = whitePlayer;
+                break;
+            default:
+                throw new RuntimeException("How did you get here");
+        }
     }
 
     private Collection<Move> calculateLegalMoves(Collection<Piece> pieceSet)
@@ -184,6 +199,11 @@ public class Board
         return blackPlayer;
     }
 
+    public Player getCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
     public static class Builder
     {
         Map<Integer, Piece> boardConfig;
@@ -210,6 +230,11 @@ public class Board
         {
             this.nextMoveMaker = nextMoveMaker;
             return this;
+        }
+
+        public Alliance getNextMoveMaker()
+        {
+            return nextMoveMaker;
         }
     }
 }
