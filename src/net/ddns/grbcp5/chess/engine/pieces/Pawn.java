@@ -89,4 +89,10 @@ public class Pawn extends Piece
                 throw new RuntimeException("How the heck did you get here homie");
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return PieceType.PAWN.toString();
+    }
 }

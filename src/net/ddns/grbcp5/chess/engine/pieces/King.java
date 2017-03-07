@@ -84,4 +84,10 @@ public class King extends Piece
     {
         return BoardUtils.isEighthColumn(curPos) && (offset == -7 || offset == 1 || offset == 9);
     }
+
+    @Override
+    public String toString()
+    {
+        return PieceType.KING.toString();
+    }
 }

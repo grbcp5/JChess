@@ -96,4 +96,10 @@ public class Rook extends Piece
     {
         return BoardUtils.isEighthColumn(currentPosition) && (offset == 1 );
     }
+
+    @Override
+    public String toString()
+    {
+        return PieceType.ROOK.toString();
+    }
 }

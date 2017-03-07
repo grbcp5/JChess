@@ -97,4 +97,9 @@ public class Bishop extends Piece
         return BoardUtils.isEighthColumn(currentPosition) && (offset == -7 || offset == 9);
     }
 
+    @Override
+    public String toString()
+    {
+        return PieceType.BISHOP.toString();
+    }
 }
