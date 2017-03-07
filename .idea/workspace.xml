@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccf456f5-149c-439a-91c0-ce17ee5bf8a8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/JChess.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveTransition.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Board.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Tile.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Tile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Alliance.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Alliance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Bishop.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Bishop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/King.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/King.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Knight.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Knight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Pawn.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Pawn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Piece.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Piece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Queen.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Queen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Rook.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Rook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/Player.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java" afterPath="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,44 +62,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pawn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Pawn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
-              <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3329#3330#0" expanded="true" />
-                <element signature="e#3377#3378#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="86">
+              <caret line="177" column="5" lean-forward="false" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
               <folding>
-                <element signature="e#1367#1368#0" expanded="true" />
-                <element signature="e#1406#1407#0" expanded="true" />
-                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#5577#5578#0" expanded="true" />
+                <element signature="e#5616#5617#0" expanded="true" />
+                <element signature="e#5669#5670#0" expanded="true" />
+                <element signature="e#5708#5709#0" expanded="true" />
+                <element signature="e#5789#5790#0" expanded="true" />
+                <element signature="e#5836#5837#0" expanded="true" />
+                <element signature="e#5870#5871#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlackPlayer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlackPlayer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#653#654#0" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#795#796#0" expanded="true" />
+                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveTransition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveTransition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveStatus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveStatus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,13 +128,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+            <state relative-caret-position="311">
+              <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1363#1364#0" expanded="true" />
+                <element signature="e#1416#1417#0" expanded="true" />
+                <element signature="e#1454#1455#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1594#1595#0" expanded="true" />
+                <element signature="e#1622#1623#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1688#1689#0" expanded="true" />
+                <element signature="e#1743#1744#0" expanded="true" />
+                <element signature="e#1770#1771#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,24 +155,16 @@
       <file leaf-file-name="WhitePlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+            <state relative-caret-position="525">
+              <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Knight.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Knight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#700#701#0" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,9 +212,11 @@
         <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Queen.java" />
         <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/pieces/Rook.java" />
         <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/JChess.java" />
-        <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java" />
-        <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java" />
         <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Board.java" />
+        <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java" />
+        <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveStatus.java" />
+        <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveTransition.java" />
+        <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java" />
         <option value="$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/Player.java" />
       </list>
     </option>
@@ -370,6 +382,7 @@
       <recent name="net.ddns.grbcp5.chess.engine.board.BoardUtils" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="net.ddns.grbcp5.chess.engine.board" />
       <recent name="net.ddns.grbcp5.chess.engine.player" />
       <recent name="net.ddns.grbcp5.chess.engine.pieces" />
     </key>
@@ -772,9 +785,8 @@
         <state relative-caret-position="1245">
           <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3329#3330#0" expanded="true" />
-            <element signature="e#3377#3378#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="false" />
+            <element signature="e#591#592#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,9 +810,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#5577#5578#0" expanded="true" />
+            <element signature="e#5616#5617#0" expanded="true" />
+            <element signature="e#5669#5670#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
+            <element signature="e#5789#5790#0" expanded="true" />
+            <element signature="e#5836#5837#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -860,9 +876,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3329#3330#0" expanded="true" />
-            <element signature="e#3377#3378#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="false" />
+            <element signature="e#591#592#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,6 +896,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -909,9 +925,13 @@
         <state relative-caret-position="150">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#5577#5578#0" expanded="true" />
+            <element signature="e#5616#5617#0" expanded="true" />
+            <element signature="e#5669#5670#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
+            <element signature="e#5789#5790#0" expanded="true" />
+            <element signature="e#5836#5837#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -927,6 +947,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -975,9 +996,13 @@
         <state relative-caret-position="150">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#5577#5578#0" expanded="true" />
+            <element signature="e#5616#5617#0" expanded="true" />
+            <element signature="e#5669#5670#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
+            <element signature="e#5789#5790#0" expanded="true" />
+            <element signature="e#5836#5837#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -993,6 +1018,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,6 +1073,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,9 +1136,8 @@
         <state relative-caret-position="1245">
           <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3329#3330#0" expanded="true" />
-            <element signature="e#3377#3378#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="false" />
+            <element signature="e#591#592#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1156,48 +1182,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/MoveTransition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/board/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="86">
+          <caret line="177" column="5" lean-forward="false" selection-start-line="177" selection-start-column="5" selection-end-line="177" selection-end-column="5" />
           <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#5577#5578#0" expanded="true" />
+            <element signature="e#5616#5617#0" expanded="true" />
+            <element signature="e#5669#5670#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
+            <element signature="e#5789#5790#0" expanded="true" />
+            <element signature="e#5836#5837#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        <state relative-caret-position="311">
+          <caret line="49" column="18" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1454#1455#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1594#1595#0" expanded="true" />
+            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1743#1744#0" expanded="true" />
+            <element signature="e#1770#1771#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/WhitePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/ddns/grbcp5/chess/engine/player/BlackPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
           </folding>
         </state>
       </provider>

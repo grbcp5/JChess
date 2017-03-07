@@ -38,16 +38,6 @@ public class Board
     private final Collection<Piece> whitePieces;
     private final Collection<Piece> blackPieces;
 
-    public Collection<Piece> getWhitePieces()
-    {
-        return this.whitePieces;
-    }
-
-    public Collection<Piece> getBlackPieces()
-    {
-        return this.blackPieces;
-    }
-
     private final WhitePlayer whitePlayer;
     private final BlackPlayer blackPlayer;
 
@@ -172,6 +162,26 @@ public class Board
 
         return builder.build();
 
+    }
+
+    public Collection<Piece> getWhitePieces()
+    {
+        return this.whitePieces;
+    }
+
+    public Collection<Piece> getBlackPieces()
+    {
+        return this.blackPieces;
+    }
+
+    public WhitePlayer getWhitePlayer()
+    {
+        return whitePlayer;
+    }
+
+    public BlackPlayer getBlackPlayer()
+    {
+        return blackPlayer;
     }
 
     public static class Builder

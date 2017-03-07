@@ -2,6 +2,8 @@ package net.ddns.grbcp5.chess.engine.player;
 
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.Move;
+import net.ddns.grbcp5.chess.engine.board.MoveTransition;
+import net.ddns.grbcp5.chess.engine.pieces.Alliance;
 import net.ddns.grbcp5.chess.engine.pieces.King;
 import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
@@ -38,4 +40,39 @@ public abstract class Player
     }
 
     public abstract Collection<Piece> getActivePieces();
+
+    public abstract Alliance getAlliance();
+
+    public abstract Player getOpponent();
+
+    public boolean isLegalMove(final Move move)
+    {
+        return this.legalMoves.contains(move);
+    }
+
+    public boolean isInCheck()
+    {
+        return false;
+    }
+
+    public boolean isInCheckMate()
+    {
+        return false;
+    }
+
+    public boolean isInStaleMate()
+    {
+        return false;
+    }
+
+    public boolean isCastled()
+    {
+        return false;
+    }
+
+    public MoveTransition Move(final Move move)
+    {
+        return null;
+    }
+
 }

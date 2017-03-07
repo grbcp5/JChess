@@ -2,6 +2,8 @@ package net.ddns.grbcp5.chess.engine.player;
 
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.Move;
+import net.ddns.grbcp5.chess.engine.board.MoveTransition;
+import net.ddns.grbcp5.chess.engine.pieces.Alliance;
 import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
 import java.util.Collection;
@@ -21,5 +23,17 @@ public class BlackPlayer extends Player
     public Collection<Piece> getActivePieces()
     {
         return this.board.getBlackPieces();
+    }
+
+    @Override
+    public Alliance getAlliance()
+    {
+        return Alliance.BLACK;
+    }
+
+    @Override
+    public Player getOpponent()
+    {
+        return this.board.getWhitePlayer();
     }
 }
