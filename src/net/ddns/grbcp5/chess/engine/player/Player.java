@@ -1,13 +1,17 @@
 package net.ddns.grbcp5.chess.engine.player;
 
+import com.google.common.collect.ImmutableList;
 import net.ddns.grbcp5.chess.engine.board.Board;
 import net.ddns.grbcp5.chess.engine.board.Move;
+import net.ddns.grbcp5.chess.engine.board.MoveStatus;
 import net.ddns.grbcp5.chess.engine.board.MoveTransition;
 import net.ddns.grbcp5.chess.engine.pieces.Alliance;
 import net.ddns.grbcp5.chess.engine.pieces.King;
 import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -18,12 +22,14 @@ public abstract class Player
     protected final Board board;
     protected final King playersKing;
     protected final Collection<Move> legalMoves;
+    protected final Collection<Move> oppMoves;
 
     public Player(final Board board, final Collection<Move> legalMoves, final Collection<Move> oppLegalMoves)
     {
         this.board = board;
         this.playersKing =  establishKing();
         this.legalMoves = legalMoves;
+        this.oppMoves = oppLegalMoves;
     }
 
     private King establishKing()
@@ -50,19 +56,28 @@ public abstract class Player
         return this.legalMoves.contains(move);
     }
 
-    public boolean isInCheck()
-    {
-        return false;
-    }
-
     public boolean isInCheckMate()
     {
+        return isInCheck() && !this.hasEscapeMoves();
+    }
+
+    protected boolean hasEscapeMoves()
+    {
+        for (final Move move : legalMoves)
+        {
+            final MoveTransition transition = makeMove(move);
+            if(transition.getMoveStatus() == MoveStatus.DONE)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 
     public boolean isInStaleMate()
     {
-        return false;
+        return !this.isInCheckMate() && !this.hasEscapeMoves();
     }
 
     public boolean isCastled()
@@ -70,9 +85,28 @@ public abstract class Player
         return false;
     }
 
-    public MoveTransition Move(final Move move)
+    public MoveTransition makeMove(final Move move)
     {
         return null;
     }
 
+    public boolean isInCheck()
+    {
+        return !Player.calculateAttacksOnTile(this.playersKing.getPosition(), this.oppMoves).isEmpty();
+    }
+
+    public static Collection<Move> calculateAttacksOnTile(final int tilePosition, Collection<Move> moveSet)
+    {
+        final List<Move> attackMoves = new ArrayList<Move>();
+
+        for(final Move move : moveSet)
+        {
+            if(tilePosition == move.getDestinationCoordinate())
+            {
+                attackMoves.add(move);
+            }
+        }
+
+        return ImmutableList.copyOf(attackMoves);
+    }
 }

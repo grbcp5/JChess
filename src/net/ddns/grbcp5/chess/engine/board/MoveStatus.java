@@ -6,5 +6,5 @@ package net.ddns.grbcp5.chess.engine.board;
  */
 public enum MoveStatus
 {
-
+    DONE;
 }

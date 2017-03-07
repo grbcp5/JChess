@@ -3,6 +3,7 @@ package net.ddns.grbcp5.chess.engine.board;
 import net.ddns.grbcp5.chess.engine.pieces.Piece;
 
 /**
+ *
  * Created by GrantBroadwater on 3/1/17.
  */
 public abstract class Move
@@ -17,6 +18,11 @@ public abstract class Move
         this.board = board;
         this.movedPice = movedPice;
         this.destinationCoordinate = destinationCoordinate;
+    }
+
+    public int getDestinationCoordinate()
+    {
+        return this.destinationCoordinate;
     }
 
     public static final class MajorMove extends Move
